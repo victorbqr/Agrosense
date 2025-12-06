@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>AgroSense - Nuestra Misión y Visión</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --agro-primary: #1790D1;   /* Azul Agua/Tech */
+            --agro-secondary: #3a6139; /* Verde Hoja */
+            --agro-text-dark: #2d916a; /* Verde Oscuro */
+            --bg-nature: #f1f8f3;      /* Fondo Verde Suave */
+        }
+        
+        /* 1. CAMBIO DE FONDO: Ahora usamos el color corporativo suave */
+        body {
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(180deg, var(--bg-nature) 0%, #20e097 100%);
+            min-height: 100vh;
+        }
+
+        /* Ajuste del Menú para que contraste con el fondo claro */
+        .navbar-custom {
+            background-color: var(--agro-text-dark) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.205);
+        }
+        
+        .navbar-custom .navbar-brand h1 { 
+            color: #afb8b3;
+        }
+
+        /* Estilos de las tarjetas (Misión/Visión) */
+        .mv-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+            border-bottom: 5px solid var(--agro-secondary);
+        }
+        .mv-card:hover { transform: translateY(-5px); }
+
+        .mv-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--bg-nature);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            color: var(--agro-secondary);
+            font-size: 1.8rem;
+        }
+        
+        .mv-title { color: var(--agro-text-dark); font-weight: 800; margin-bottom: 1rem; }
+        .mv-text { color: #175853; font-size: 1.05rem; line-height: 1.6; }
+
+        /* Estilos para la sección de ASESORES */
+        .team-section-title {
+            color: var(--agro-text-dark);
+            font-weight: 800;
+        }
+        
+        .team-description {
+            color: #555;
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: .3s;
+        }
+        
+        .team-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .team-img-box {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--agro-primary);
+        }
+        
+        .team-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .team-name { color: var(--agro-text-dark); font-weight: 700; font-size: 1.2rem; }
+        .team-role { color: var(--agro-primary); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; }
+
+        .btn-back {
+            background-color: rgba(255,255,255,0.2);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .btn-back:hover { background-color: #fff; color: var(--agro-text-dark); }
+
+        /* CLASES DE FONDO NUEVAS */
+        .bg-nature { background-color: var(--bg-nature) !important; }
+        .bg-tech { background-color: var(--bg-tech) !important; }
+        .bg-soil { background-color: var(--bg-soil) !important; }
+        
+        .bg-dark-agro { 
+            background-color: var(--agro-text-dark) !important; 
+            color: #fff !important;
+        }
+
+        /* Ajustes de texto para el fondo oscuro */
+        .bg-dark-agro .agro-section-title { color: #fff !important; }
+        .bg-dark-agro .agro-section-subtitle { color: #d1e7dd !important; }
+        .bg-dark-agro .text-muted { color: #a3cfbb !important; }
+
+        /* Estilos de tarjetas existentes... */
+        .agro-section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--agro-text-dark);
+            margin-bottom: .5rem;
+        }
+
+        .agro-section-subtitle {
+            color: #6b7280;
+            max-width: 650px;
+        }
+
+        .agro-feature-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.3rem 1.4rem;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            height: 100%;
+        }
+
+        .agro-feature-card i {
+            font-size: 1.8rem;
+            margin-bottom: .5rem;
+            color: var(--agro-primary);
+        }
+
+        .agro-feature-card h5 {
+            font-weight: 700;
+            color: var(--agro-text-dark);
+        }
+
+        .agro-feature-card p {
+            font-size: .95rem;
+            color: #4b5563;
+        }
+
+        .agro-pricing-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.6rem 1.5rem;
+            box-shadow: 0 14px 35px rgba(15, 23, 42, 0.09);
+            border-top: 4px solid var(--agro-primary);
+            height: 100%;
+        }
+
+        .agro-pricing-card.highlight {
+            border-top-color: var(--agro-secondary);
+            transform: translateY(-4px);
+        }
+
+        .agro-pricing-card h4 {
+            font-weight: 800;
+            color: var(--agro-text-dark);
+        }
+
+        .agro-pricing-price {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--agro-primary);
+        }
+
+        .agro-pricing-card ul {
+            padding-left: 1.1rem;
+            font-size: .9rem;
+            color: #4b5563;
+        }
+
+        .agro-testimonial-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.2rem 1.3rem;
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+            font-size: .95rem;
+        }
+
+        .agro-testimonial-name {
+            font-weight: 700;
+            color: var(--agro-text-dark);
+        }
+
+        .agro-testimonial-role {
+            font-size: .85rem;
+            color: #6b7280;
+        }
+
+        .agro-roi-card,
+        .agro-contact-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.3rem 1.4rem;
+            box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+        }
+
+        #roiResult {
+            background: linear-gradient(135deg, var(--agro-primary), var(--agro-secondary));
+            border-radius: 12px;
+            color: #fff;
+            padding: .9rem 1rem;
+            font-size: .9rem;
+            font-weight: 600;
+            margin-top: .8rem;
+        }
+
+        .sticky-cta {
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+            z-index: 999;
+        }
+
+        .sticky-cta .btn {
+            border-radius: 999px;
+            font-weight: 700;
+        }
+
+
+        /* --- BARRA DE NAVEGACIÓN AGROSENSE (SCROLL) --- */
+
+        /* 1. Al bajar (scroll), el fondo cambia a Verde Oscuro en lugar de blanco */
+        .sticky-top.navbar-light {
+            background-color: var(--agro-text-dark) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        /* 2. Al bajar, el color de las letras cambia a Blanco para que se lean bien */
+        .sticky-top.navbar-light .navbar-nav .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+        }
+
+        /* 3. Efecto Hover (pasar el mouse) al bajar: Verde Claro brillante */
+        .sticky-top.navbar-light .navbar-nav .nav-link:hover,
+        .sticky-top.navbar-light .navbar-nav .nav-link.active {
+            color: #4ade80 !important; /* Un verde luz muy legible sobre fondo oscuro */
+        }
+
+        /* 4. Ajuste para el botón de menú en celulares (Hamburguesa) */
+        .sticky-top.navbar-light .navbar-toggler {
+            color: #fff !important;
+            border-color: rgba(255,255,255,0.5) !important;
+        }
+
+        /* (Opcional) Asegura que el logo se vea bien si es transparente */
+        .sticky-top.navbar-light .navbar-brand h1 {
+            color: #fff !important; /* Texto del logo en blanco si fuera texto */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+            <h1 class="text-primary mb-0"><img src="img/logo_a.png" alt="logo">AgroSense</h1>
+        </a>
+        <div class="ms-auto">
+            <a href="index.html" class="btn btn-light rounded-pill py-2 px-4" style="opacity: 0.9;">
+                <i class="fas fa-arrow-left me-2"></i>Volver al Inicio
+            </a>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+                <h1 class="display-4 mb-4" style="color: var(--agro-text-dark); font-weight: 800;">Nuestra Esencia</h1>
+                <p class="mb-0 page-subtitle" style="font-size: 1.2rem;">
+                    En AgroSense trabajamos cada día para transformar el campo boliviano con tecnología accesible.
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-lg-5 col-md-6">
+                    <div class="mv-card">
+                        <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                        <h2 class="mv-title">Misión</h2>
+                        <p class="mv-text">
+                            Facilitar tecnología accesible a agricultores para aumentar producción y reducir pérdidas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-6">
+                    <div class="mv-card">
+                        <div class="mv-icon"><i class="fas fa-globe-americas"></i></div>
+                        <h2 class="mv-title">Visión</h2>
+                        <p class="mv-text">
+                            Ser la plataforma líder en monitoreo agrícola inteligente para Latinoamérica.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!-- =================== FIN CONTENIDO AGROSENSE =================== -->
+<!-- Team Start -->
+        <div class="container-fluid team pb-5">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h2 class="text-primary">Nuestro Equipo</h2>
+                    <h1 class="display-4 mb-4" style="color: var(--agro-secondary); font-weight: 800;">Conozca a los integrantes del equipo</h1>
+                    <p class="mb-0">
+                        Contamos con un equipo multidisciplinario donde la <strong>agronomía tradicional</strong> se une a la <strong>innovación tecnológica</strong>. 
+                        Nuestros expertos en cultivos, ingenieros IoT y científicos de datos trabajan juntos para garantizar que tu campo alcance su máximo potencial.
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/persona1.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="team-title">
+                                <h4 class="mb-0">Postigo Vera Osmar</h4>
+                                <p class="mb-0">Programador</p>
+                            </div>
+                            <div class="team-icon">
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/persona_4.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="team-title">
+                                <h4 class="mb-0">Choque Mamani Rilmar David</h4>
+                                <p class="mb-0">Programador</p>
+                            </div>
+                            <div class="team-icon">
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-2.jpg" class="img-fluid" alt="">
+                            </div>
+                            <div class="team-title">
+                                <h4 class="mb-0">Peredo Cachi Josmar Carlos</h4>
+                                <p class="mb-0">Programador</p>
+                            </div>
+                            <div class="team-icon">
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/persona_2.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="team-title">
+                                <h4 class="mb-0">Pari Carrillo Jimena</h4>
+                                <p class="mb-0">Programador</p>
+                            </div>
+                            <div class="team-icon">
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                        
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/persona_3.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="team-title">
+                                <h4 class="mb-0">Quispe Rojas Victor Bernardo</h4>
+                                <p class="mb-0">Programador</p>
+                            </div>
+                            <div class="team-icon">
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5 border-start-0 border-end-0" style="border: 1px solid; border-color: rgb(255, 255, 255, 0.08);">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-4">
+                    <div class="footer-item">
+                        <a href="index.html" class="p-0">
+                            <h4 class="text-white"><i class="fas fa-seedling me-3"></i>AgroSense</h4>
+                        </a>
+                        <p class="mb-4">
+                            Plataforma académica de innovación tecnológica para demostrar cómo los sensores e IA pueden ayudar a los agricultores a tomar mejores decisiones.
+                        </p>
+                        <div class="d-flex">
+                            <a href="#" class="bg-primary d-flex rounded align-items-center py-2 px-3 me-2">
+                                <i class="fas fa-apple-alt text-white"></i>
+                                <div class="ms-3">
+                                    <small class="text-white">Próximamente en</small>
+                                    <h6 class="text-white">App Store</h6>
+                                </div>
+                            </a>
+                            <a href="#" class="bg-dark d-flex rounded align-items-center py-2 px-3 ms-2">
+                                <i class="fas fa-play text-primary"></i>
+                                <div class="ms-3">
+                                    <small class="text-white">Próximamente en</small>
+                                    <h6 class="text-white">Google Play</h6>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-2">
+                    <div class="footer-item">
+                        <h4 class="text-white mb-4">Enlaces</h4>
+                        <a href="#acerca"><i class="fas fa-angle-right me-2"></i> Acerca de</a>
+                        <a href="#servicios"><i class="fas fa-angle-right me-2"></i> Servicios</a>
+                        <a href="#planes"><i class="fas fa-angle-right me-2"></i> Planes</a>
+                        <a href="#video"><i class="fas fa-angle-right me-2"></i> Video demo</a>
+                        <a href="#contacto"><i class="fas fa-angle-right me-2"></i> Contacto</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item">
+                        <h4 class="text-white mb-4">Soporte</h4>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Política de privacidad</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Términos y condiciones</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Preguntas frecuentes</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Manual de usuario</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item">
+                        <h4 class="text-white mb-4">Contacto Info</h4>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                            <p class="text-white mb-0">Calle de ejemplo 123, La Paz</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-envelope text-primary me-3"></i>
+                            <p class="text-white mb-0">contacto@agrosense.bo</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-phone-alt text-primary me-3"></i>
+                            <p class="text-white mb-0">(+591) 700-000-00</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fab fa-firefox-browser text-primary me-3"></i>
+                            <p class="text-white mb-0">www.agrosense.bo</p>
+                        </div>
+                        <div class="d-flex">
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f text-white"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-twitter text-white"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-instagram text-white"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-0" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>AgroSense</a>, Todos los derechos reservados (proyecto académico).</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body">
+                    Diseñado para la materia de Innovación Tecnológica.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <button class="chat-toggler" onclick="toggleChat()">
+    <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <div class="chatbot-container" id="chatbot">
+        <div class="chat-header">
+            <i class="fas fa-robot me-2"></i>
+            <h4>Asistente AgroSense</h4>
+            <span class="close-btn" onclick="toggleChat()"><i class="fas fa-times"></i></span>
+        </div>
+        
+        <div class="chatbox" id="chatbox">
+            <div class="chat-msg bot">
+                ¡Hola! Soy el asistente virtual de AgroSense. 🌱<br>
+                ¿En qué puedo ayudarte hoy?<br><br>
+                Puedes preguntar por: <strong>Precios, Sensores, Instalación o Contacto</strong>.
+            </div>
+        </div>
+        
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Escribe tu mensaje..." onkeypress="handleEnter(event)">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- JS extra para funciones AgroSense -->
+    <script>
+        function scrollToContacto() {
+            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function calculateROI() {
+            const yieldVal = parseFloat(document.getElementById('yield').value) || 0;
+            const sensors = parseFloat(document.getElementById('sensors').value) || 0;
+            const sensorCost = parseFloat(document.getElementById('sensorCost').value) || 0;
+            const monthlyFee = parseFloat(document.getElementById('monthlyFee').value) || 0;
+            const increase = parseFloat(document.getElementById('expectedIncrease').value) || 0;
+
+            const monthlyBenefit = yieldVal * (increase / 100);
+            const totalSensorCost = sensors * sensorCost;
+            const monthlySubs = sensors * monthlyFee;
+            const netMonthlyGain = monthlyBenefit - monthlySubs;
+
+            const res = document.getElementById('roiResult');
+            if (netMonthlyGain <= 0) {
+                res.style.display = 'block';
+                res.innerHTML = "Con los datos ingresados, el retorno no es claro. Ajusta el % de aumento o el número de sensores.";
+            } else {
+                const monthsToROI = totalSensorCost / netMonthlyGain;
+                res.style.display = 'block';
+                res.innerHTML = `Beneficio mensual estimado: <strong>${monthlyBenefit.toFixed(2)} Bs</strong><br>
+                                 Costo inicial (sensores): <strong>${totalSensorCost.toFixed(2)} Bs</strong><br>
+                                 Suscripción mensual total: <strong>${monthlySubs.toFixed(2)} Bs</strong><br>
+                                 Retorno estimado en: <strong>${monthsToROI.toFixed(1)} meses</strong>`;
+            }
+        }
+
+        function sendDemo(e) {
+            e.preventDefault();
+            const name = document.getElementById('fName').value;
+            const phone = document.getElementById('fPhone').value;
+            const place = document.getElementById('fPlace').value;
+            const msg = document.getElementById('fMsg').value;
+
+            const subject = encodeURIComponent('Solicitud de demo AgroSense - ' + name);
+            const body = encodeURIComponent(
+                `Nombre: ${name}\nTeléfono: ${phone}\nLocalidad: ${place}\nMensaje: ${msg}`
+            );
+
+            window.location.href = `mailto:contacto@agrosense.bo?subject=${subject}&body=${body}`;
+            alert("Solicitud generada en tu cliente de correo (modo demo).");
+        }
+    </script>
+    
+
+    <script>
+    // Lógica del Chatbot AgroSense
+    function toggleChat() {
+        document.body.classList.toggle("show-chatbot");
+    }
+
+    function handleEnter(e) {
+        if (e.key === "Enter") {
+            sendMessage();
+        }
+    }
+
+    function sendMessage() {
+        const input = document.getElementById("chatInput");
+        const msg = input.value.trim();
+        const chatbox = document.getElementById("chatbox");
+
+        if (!msg) return;
+
+        // 1. Agregar mensaje del usuario
+        appendMessage(msg, "user");
+        input.value = "";
+
+        // 2. Simular "escribiendo..." y respuesta del bot
+        setTimeout(() => {
+            const botResponse = getBotResponse(msg.toLowerCase());
+            appendMessage(botResponse, "bot");
+        }, 600);
+    }
+
+    function appendMessage(text, sender) {
+        const chatbox = document.getElementById("chatbox");
+        const div = document.createElement("div");
+        div.classList.add("chat-msg", sender);
+        div.innerHTML = text; // Usamos innerHTML para permitir saltos de línea <br>
+        chatbox.appendChild(div);
+        chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll al final
+    }
+
+    // CEREBRO DEL BOT: Aquí configuras las respuestas
+    function getBotResponse(input) {
+        // Respuestas simples basadas en palabras clave
+        if (input.includes("hola") || input.includes("buen")) {
+            return "¡Hola! Bienvenido a AgroSense. ¿Te gustaría saber cómo optimizar tu riego?";
+        } 
+        else if (input.includes("precio") || input.includes("costo") || input.includes("cuanto") || input.includes("plan")) {
+            return "Nuestros planes comienzan desde un precio accesible. <br>🔹 Plan Básico: Monitorización simple.<br>🔹 Plan Pro: IA y alertas.<br>¿Te gustaría ver la tabla de precios completa?";
+        } 
+        else if (input.includes("sensor") || input.includes("equipo") || input.includes("dispositivo")) {
+            return "Usamos sensores IoT de humedad, temperatura y pH. Son resistentes al clima y tienen batería de larga duración (2 años). 🔋";
+        }
+        else if (input.includes("contacto") || input.includes("telefono") || input.includes("ubicacion")) {
+            return "Estamos en La Paz, Bolivia. 🇧🇴<br>Puedes llamarnos al +591 6000-0000 o escribirnos a contacto@agrosense.bo";
+        }
+        else if (input.includes("instala") || input.includes("funciona")) {
+            return "¡Es muy fácil! Clavas el sensor en la tierra, escaneas el código QR con nuestra App y listo. Empiezas a recibir datos en 5 minutos. ⏱️";
+        }
+        else {
+            return "Disculpa, no entendí bien tu consulta. 🤔 Intenta escribir 'precios', 'sensores' o 'contacto' para que pueda ayudarte mejor.";
+        }
+    }
+</script>
+</body>
+</html>
