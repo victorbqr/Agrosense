@@ -15,6 +15,172 @@
 }
 /*** Spinner End ***/
 
+
+/* --- NUEVOS FONDOS TEMÁTICOS AGROSENSE --- */
+
+/* Fondo suave verde menta (Crecimiento/Cultivo) */
+.bg-agro-fresh {
+    background-color: #f4fcf5; 
+    border-bottom: 1px solid #e0f2e2;
+}
+
+/* Fondo degradado sutil (Tecnología + Agua) */
+.bg-agro-gradient {
+    background: linear-gradient(180deg, #ffffff 0%, #e6f4fa 100%);
+}
+
+/* Fondo tierra muy suave (Suelo/Campo) */
+.bg-agro-soil {
+    background-color: #fdfaf6;
+}
+
+/* Fondo oscuro para contraste (Sección de Video) */
+.bg-agro-dark {
+    background-color: var(--agro-text-dark); /* Usamos tu verde oscuro existente */
+    color: #ffffff;
+}
+
+/* Ajuste para textos dentro del fondo oscuro */
+.bg-agro-dark .agro-section-title {
+    color: #ffffff !important;
+}
+.bg-agro-dark .agro-section-subtitle, 
+.bg-agro-dark .text-muted {
+    color: #d1e7dd !important;
+}
+
+
+/* --- CHATBOT AGROSENSE --- */
+.chat-toggler {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; /* Al lado del botón 'subir' si lo tienes, o ajusta a 90px si se solapan */
+    height: 60px;
+    width: 60px;
+    background: var(--agro-text-dark); /* Verde corporativo */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.chat-toggler:hover {
+    transform: scale(1.1);
+    background: var(--agro-secondary);
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 350px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 10001;
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+}
+
+.show-chatbot .chatbot-container {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.chat-header {
+    background: var(--agro-text-dark);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.chat-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+    flex-grow: 1;
+}
+
+.chat-header .close-btn {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.chatbox {
+    padding: 15px;
+    height: 350px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 0.95rem;
+}
+
+.chat-input button {
+    background: transparent;
+    border: none;
+    color: var(--agro-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Burbujas de chat */
+.chat-msg {
+    max-width: 80%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.chat-msg.bot {
+    align-self: flex-start;
+    background: #e9ecef;
+    color: #333;
+    border-bottom-left-radius: 2px;
+}
+
+.chat-msg.user {
+    align-self: flex-end;
+    background: var(--agro-primary);
+    color: #fff;
+    border-bottom-right-radius: 2px;
+}
+
+
+
+
+
 .back-to-top {
     position: fixed;
     right: 30px;
@@ -910,3 +1076,129 @@
 /*** copyright end ***/
 
 
+/* --- CHATBOT AGROSENSE --- */
+.chat-toggler {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; /* Al lado del botón 'subir' si lo tienes, o ajusta a 90px si se solapan */
+    height: 60px;
+    width: 60px;
+    background: var(--agro-text-dark); /* Verde corporativo */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.chat-toggler:hover {
+    transform: scale(1.1);
+    background: var(--agro-secondary);
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 350px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 10001;
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+}
+
+.show-chatbot .chatbot-container {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.chat-header {
+    background: var(--agro-text-dark);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.chat-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+    flex-grow: 1;
+}
+
+.chat-header .close-btn {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.chatbox {
+    padding: 15px;
+    height: 350px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 0.95rem;
+}
+
+.chat-input button {
+    background: transparent;
+    border: none;
+    color: var(--agro-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Burbujas de chat */
+.chat-msg {
+    max-width: 80%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.chat-msg.bot {
+    align-self: flex-start;
+    background: #e9ecef;
+    color: #333;
+    border-bottom-left-radius: 2px;
+}
+
+.chat-msg.user {
+    align-self: flex-end;
+    background: var(--agro-primary);
+    color: #fff;
+    border-bottom-right-radius: 2px;
+}
